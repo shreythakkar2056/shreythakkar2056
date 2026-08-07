@@ -1,72 +1,117 @@
 <div align="center">
 
-# 👋 Hi, I'm Shrey Thakkar
+# Shrey Thakkar
+
+### Product Engineer • Full Stack Developer • Building Statmize
 
 <p>
-<i>Product Engineer • Full Stack Developer • Building Statmize</i>
+Building software, IoT products, and AI-powered solutions that solve real-world problems.
 </p>
 
 <br>
 
-<h3>
-<code>shrey@github:~$ whoami</code>
-</h3>
-
 <table>
 <tr>
 
-<td width="38%" valign="top" align="center">
 
-<img src="./ascii.svg" width="330"/>
+<td width="64%" valign="top">
 
-</td>
-
-<td width="62%" valign="top">
-
-<img src="./info-card.svg" width="560"/>
+<img src="./info-card.svg" width="560">
 
 </td>
 
+<td width="36%" align="center" valign="top">
+
+<img src="./ascii.svg" width="320">
+
+</td>
 </tr>
 </table>
 
 <br>
 
-<h3>
-<code>shrey@github:~$ ls projects</code>
-</h3>
+<h3><code>shrey@github:~$ git log --contributions</code></h3>
 
-<table>
-<tr>
+<img src="./contrib-heatmap.svg" width="900">
 
-<td>
+</div>
 
-🚀 **Statmize**  
-Smart Sports Technology Platform
+---
 
-</td>
+# 🖥️ Terminal
 
-<td>
+```bash
+shrey@github:~$ whoami
 
-🖨️ **Print Portal**  
-Cloud Printing Management
+Name        : Shrey Thakkar
+Role        : Product Engineer
+Location    : Ahmedabad, India
 
-</td>
+Speciality  : Flutter • MERN • IoT • AI
 
-<td>
+```
 
-💰 **Expense Manager**  
-Flutter Finance App
+---
 
-</td>
+# 🚀 Featured Projects
 
-</tr>
-</table>
+| Project | Description | Tech Stack |
+|---------|-------------|------------|
+| 🏸 **Statmize** | Smart sports analytics platform powered by IoT & AI | Flutter • BLE • Firebase |
+| 🖨️ **Print Portal** | SaaS platform for printing businesses | MERN |
+| 💰 **Expense Manager** | Offline-first personal finance application | Flutter • Hive |
+| 🌐 **Portfolio Website** | Modern developer portfolio | Next.js |
 
-<br>
+---
 
-<h3>
-<code>shrey@github:~$ echo "Let's build something amazing."</code>
-</h3>
+# ⚡ Tech Stack
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=flutter,dart,react,nextjs,nodejs,express,mongodb,firebase,supabase,python,cpp,java,git,github,vscode,figma"/>
+
+</p>
+
+---
+
+# 📌 Currently Working On
+
+- 🏸 Building **Statmize**
+- 📱 Cross-platform Flutter applications
+- 🌐 Full Stack Web Applications
+- 🤖 AI-powered software
+- 📡 Embedded Systems & IoT
+- ⚙️ Product Engineering
+
+---
+
+# 📈 2026 Goals
+
+- 📱 Publish more production apps
+- 🌍 Contribute to Open Source
+- ⚡ Learn Advanced System Design
+- 🧠 Explore AI & Computer Vision
+
+---
+
+# 🌎 Let's Connect
+
+<p align="center">
+
+<a href="https://www.shreythakkar.dev">🌐 Portfolio</a>
+&nbsp;•&nbsp;
+<a href="https://github.com/shreythakkar2056">GitHub</a>
+&nbsp;•&nbsp;
+<a href="https://www.linkedin.com/in/shreythakkar20">LinkedIn</a>
+&nbsp;•&nbsp;
+<a href="mailto:shreythakkar2056@gmail.com">Email</a>
+
+</p>
+
+---
+
+<div align="center">
+
+### 💡 *Code. Build. Learn. Repeat.*
 
 </div>

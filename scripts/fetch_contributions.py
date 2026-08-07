@@ -1,42 +1,94 @@
 from pathlib import Path
+from datetime import datetime, timedelta
+from dotenv import load_dotenv
+import os
 import json
 import requests
-from bs4 import BeautifulSoup
 
-USERNAME = "shreythakkar2056"
+load_dotenv()
+
+TOKEN = os.getenv("GITHUB_TOKEN")
+USERNAME = os.getenv("GITHUB_USERNAME")
+
+if not TOKEN:
+    raise RuntimeError("GITHUB_TOKEN not found in .env")
 
 ROOT = Path(__file__).parent.parent
-DATA_DIR = ROOT / "data"
-DATA_DIR.mkdir(exist_ok=True)
+DATA = ROOT / "data"
+DATA.mkdir(exist_ok=True)
 
-URL = f"https://github.com/users/{USERNAME}/contributions"
+today = datetime.utcnow().date()
+start = today - timedelta(days=370)
 
-headers = {
-    "User-Agent": "Mozilla/5.0"
+query = """
+query($login:String!, $from:DateTime!, $to:DateTime!) {
+  user(login:$login) {
+    contributionsCollection(from:$from,to:$to) {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays {
+            contributionCount
+            contributionLevel
+            date
+            weekday
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+variables = {
+    "login": USERNAME,
+    "from": f"{start}T00:00:00Z",
+    "to": f"{today}T23:59:59Z"
 }
 
-response = requests.get(URL, headers=headers)
+headers = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Content-Type": "application/json"
+}
 
-if response.status_code != 200:
-    raise Exception(f"Failed to fetch contributions ({response.status_code})")
+r = requests.post(
+    "https://api.github.com/graphql",
+    json={
+        "query": query,
+        "variables": variables
+    },
+    headers=headers
+)
 
-soup = BeautifulSoup(response.text, "html.parser")
+data = r.json()
+
+if "errors" in data:
+    print(json.dumps(data["errors"], indent=2))
+    raise SystemExit()
+
+calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
 
 days = []
 
-for rect in soup.select("rect[data-date]"):
+for week in calendar["weeks"]:
+    for day in week["contributionDays"]:
+        days.append({
+            "date": day["date"],
+            "count": day["contributionCount"],
+            "level": day["contributionLevel"],
+            "weekday": day["weekday"]
+        })
 
-    days.append({
-        "date": rect["data-date"],
-        "count": int(rect.get("data-count", 0)),
-        "level": int(rect.get("data-level", 0))
-    })
+output = {
+    "total": calendar["totalContributions"],
+    "days": days
+}
 
-output = DATA_DIR / "contributions.json"
-
-output.write_text(
-    json.dumps(days, indent=4),
+(DATA / "contributions.json").write_text(
+    json.dumps(output, indent=4),
     encoding="utf8"
 )
 
-print(f"Saved {len(days)} contribution days.")
+print(f"Total Contributions : {output['total']}")
+print(f"Days fetched        : {len(days)}")
+print("Saved data/contributions.json")

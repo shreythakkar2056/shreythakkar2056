@@ -12,3 +12,4 @@ assets/source-prepped.png
 # OS
 .DS_Store
 Thumbs.db
+.env
