@@ -7,11 +7,11 @@ import requests
 
 load_dotenv()
 
-TOKEN = os.getenv("GITHUB_TOKEN")
+TOKEN = os.getenv("TOKEN")
 USERNAME = os.getenv("GITHUB_USERNAME")
 
 if not TOKEN:
-    raise RuntimeError("GITHUB_TOKEN not found in .env")
+    raise RuntimeError("TOKEN not found in .env")
 
 ROOT = Path(__file__).parent.parent
 DATA = ROOT / "data"

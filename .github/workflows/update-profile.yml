@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate contribution data
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           GITHUB_USERNAME: shreythakkar2056
         run: |
           python scripts/fetch_contributions.py
