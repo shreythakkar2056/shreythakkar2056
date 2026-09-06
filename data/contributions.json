@@ -1,48 +1,6 @@
 {
-    "total": 160,
+    "total": 161,
     "days": [
-        {
-            "date": "2025-08-31",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 0
-        },
-        {
-            "date": "2025-09-01",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 1
-        },
-        {
-            "date": "2025-09-02",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 2
-        },
-        {
-            "date": "2025-09-03",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 3
-        },
-        {
-            "date": "2025-09-04",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 4
-        },
-        {
-            "date": "2025-09-05",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 5
-        },
-        {
-            "date": "2025-09-06",
-            "count": 0,
-            "level": "NONE",
-            "weekday": 6
-        },
         {
             "date": "2025-09-07",
             "count": 0,
@@ -2223,9 +2181,15 @@
         },
         {
             "date": "2026-09-05",
+            "count": 1,
+            "level": "FIRST_QUARTILE",
+            "weekday": 6
+        },
+        {
+            "date": "2026-09-06",
             "count": 0,
             "level": "NONE",
-            "weekday": 6
+            "weekday": 0
         }
     ]
 }
