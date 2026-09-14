@@ -1,5 +1,5 @@
 {
-    "total": 171,
+    "total": 174,
     "days": [
         {
             "date": "2025-09-14",
@@ -2187,9 +2187,15 @@
         },
         {
             "date": "2026-09-13",
+            "count": 3,
+            "level": "FIRST_QUARTILE",
+            "weekday": 0
+        },
+        {
+            "date": "2026-09-14",
             "count": 0,
             "level": "NONE",
-            "weekday": 0
+            "weekday": 1
         }
     ]
 }
